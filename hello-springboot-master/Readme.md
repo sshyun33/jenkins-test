@@ -5,6 +5,10 @@ Hello Spring Boot App
 ```bash
 $ ./gradlew clean build
 ```
+## Test (Unix-like)
+```bash
+$ gradlew test
+```
 
 ## Run
 ```bash
