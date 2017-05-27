@@ -2,7 +2,7 @@ pipeline {
   agent any
   
   environment {
-        DOCKER_HOST = '10.128.0.2:2375'
+        DOCKER_HOST = 'tcp://10.128.0.2:2375'
         DOCKER_COMPOSE_FILE = 'ci_cd/docker-compose.yml'
         DOCKER_REGISTRY = '10.156.0.2:5000'
         DOCKER_IMAGE = 'hello-springboot-app'
@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage("Ready") {
       steps {
-        
+        sh "cd ./hello-springboot-master \ ./gradlew clean build"
       }
     }
     stage("Unit") {
@@ -24,7 +24,7 @@ pipeline {
     stage("Integ") {
       steps {
         echo "Integration testing phase."
-        
+        sh "cd ./hello-springboot-master \ ./gradlew test"
       }
     }
     stage("Publish") {
