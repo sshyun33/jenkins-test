@@ -1,2 +1,14 @@
-version: "3"
+version: '3'
+
 services:
+
+  app:
+    build:
+      context: ../
+      dockerfile: ci_cd/Dockerfile
+    image: hello-spring-image
+    ports:
+      - "80:3000"
+    environment:
+      - ROOT_URL=http://localhost
+
