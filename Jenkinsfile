@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage("Ready") {
       steps {
-        sh "cd hello-springboot-master/gradlew clean build"
+        sh "./hello-springboot-master/gradlew clean build"
       }
     }
     stage("Unit") {
@@ -24,7 +24,7 @@ pipeline {
     stage("Integ") {
       steps {
         echo "Integration testing phase."
-        sh "cd hello-springboot-master/gradlew test"
+        sh "./hello-springboot-master/gradlew test"
       }
     }
     stage("Publish") {
