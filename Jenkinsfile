@@ -11,9 +11,6 @@ pipeline {
   }
 
   stages {
-    dir('hello-springboot-master') {
-    checkout scm
-    }
     stage("Ready") {
       steps {
         checkout scm
