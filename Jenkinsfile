@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage("Ready") {
       steps {
-        checkout scm
+        sh "ls -la ${pwd()}"
         sh "./hello-springboot-master/gradlew clean build"
       }
     }
