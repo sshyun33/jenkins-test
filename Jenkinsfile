@@ -13,8 +13,7 @@ pipeline {
   stages {
     stage("Ready") {
       steps {
-        sh "cd ./hello-springboot-master/"
-        sh "./gradlew clean build"
+        sh "./hello-springboot-master/gradlew clean build"
       }
     }
     stage("Unit") {
