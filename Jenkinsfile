@@ -11,8 +11,12 @@ pipeline {
   }
 
   stages {
+    dir('hello-springboot-master') {
+    checkout scm
+    }
     stage("Ready") {
       steps {
+        checkout scm
         sh "./hello-springboot-master/gradlew clean build"
       }
     }
